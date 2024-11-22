@@ -13,7 +13,7 @@ public class Sniper extends Weapon
      */
     Sniper(String name, int damage, double accuracy, double fireRate, double reloadSpeed, int clip)
     {
-        super(name,damage,accuracy,fireRate,reloadSpeed,clip);
+        super(name,damage,accuracy,fireRate,reloadSpeed,clip, "Sniper");
     }
 
     /**
@@ -32,6 +32,7 @@ public class Sniper extends Weapon
         weaponFireRate = assignInt(2,5);
         weaponReloadSpeed = assignInt(5,6);
         weaponMagSize = assignInt(4,10);
+        weaponType = "Sniper";
     }
 
     /**

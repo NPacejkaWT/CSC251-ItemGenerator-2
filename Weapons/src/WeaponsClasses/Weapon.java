@@ -11,6 +11,8 @@ public class Weapon
     protected double weaponFireRate;
     protected double weaponReloadSpeed;
     protected int weaponMagSize;
+    protected String weaponType;
+
 
     /**
      * Default constructor with no variables.
@@ -24,7 +26,7 @@ public class Weapon
     /**
      *Constructor that takes input
      */
-    Weapon(String name, int damage, double accuracy, double fireRate, double reloadSpeed, int clip)
+    Weapon(String name, int damage, double accuracy, double fireRate, double reloadSpeed, int clip, String type)
     {
         weaponName = name;
         weaponDamage = damage;
@@ -32,6 +34,7 @@ public class Weapon
         weaponFireRate = fireRate;
         weaponReloadSpeed = reloadSpeed;
         weaponMagSize = clip;
+        weaponType = type;
 
     }
 
@@ -67,6 +70,11 @@ public class Weapon
     {
         weaponMagSize = clip;
     }
+    public void setWeaponType(String type) 
+    { 
+        weaponType = type; 
+    }
+
 
     /**
      *Getter functions
@@ -99,6 +107,10 @@ public class Weapon
     public int getWeaponMagSize()
     {
         return weaponMagSize;
+    }
+    public String getWeaponType() 
+    { 
+        return weaponType; 
     }
 
     /**
@@ -142,8 +154,9 @@ public class Weapon
      */
     public String toString()
     {
-        return  weaponName + "\nDamage: " + weaponDamage + "\nAccuracy: " + weaponAccuracy +
-                "\nFire Rate: " + weaponFireRate + "\nReload Speed: " + weaponReloadSpeed +
-                "\nMagazine: " + weaponMagSize + "\n";
+        return  "Weapon Type: " + weaponType + "\n" + 
+               weaponName + "\nDamage: " + weaponDamage + "\nAccuracy: " + weaponAccuracy +
+               "\nFire Rate: " + weaponFireRate + "\nReload Speed: " + weaponReloadSpeed +
+               "\nMagazine: " + weaponMagSize + "\n";
     }
 }

@@ -13,7 +13,7 @@ public class Rifle extends Weapon
      */
     Rifle(String name, int damage, double accuracy, double fireRate, double reloadSpeed, int clip)
     {
-        super(name, damage, accuracy, fireRate, reloadSpeed, clip);
+        super(name, damage, accuracy, fireRate, reloadSpeed, clip, "Rifle");
     }
 
     /**
@@ -32,6 +32,7 @@ public class Rifle extends Weapon
         weaponFireRate = assignInt(5,10);
         weaponReloadSpeed = assignInt(3,7);
         weaponMagSize = assignInt(30,91);
+        weaponType = "Rifle";
     }
 
     /**
