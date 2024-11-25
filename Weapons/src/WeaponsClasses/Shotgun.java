@@ -39,6 +39,7 @@ public class Shotgun extends Weapon
         weaponReloadSpeed = assignInt(2,5);
         weaponMagSize = assignInt(2,10);
         weaponType = "Shotgun";
+        generateAttachments();
     }
 
     public int getPellets()

@@ -35,6 +35,7 @@ public class Pistol extends Weapon
         weaponReloadSpeed = assignInt(2,5);
         weaponMagSize = assignInt(6,21);
         weaponType = "Pistol";  
+        generateAttachments();
     }
 
     /**

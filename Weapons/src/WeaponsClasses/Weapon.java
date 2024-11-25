@@ -1,7 +1,11 @@
 package WeaponsClasses;
 
-public class Weapon
-{
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class Weapon {
     /**
      * Item basic attributes
      */
@@ -12,8 +16,29 @@ public class Weapon
     protected double weaponReloadSpeed;
     protected int weaponMagSize;
     protected String weaponType;
+    protected List<Attachment> attachments = new ArrayList<>();
 
+    /**
+     * Generates random attachments for the weapon, ensuring no duplicates.
+     */
+    public void generateAttachments() {
+        String[] attachmentNames = {"4xScope", "Grip", "Laser", "Extended Mag", "Suppressor", "Flashlight", "Stock", "Incendiary Rounds","Piercing Rounds" };
+        Set<String> uniqueAttachmentNames = new HashSet<>();
 
+        while (attachments.size() < 3) {
+            String randomName = attachmentNames[(int) (Math.random() * attachmentNames.length)];
+
+            // Only add if not already in the set
+            if (uniqueAttachmentNames.add(randomName)) {
+                attachments.add(new Attachment(randomName)); // Add to attachments list
+            }
+        }
+    }
+
+    /**
+     * Default constructor with no variables.
+     * Assigns values to variables using Math.random() without user input
+     */
     /**
      * Default constructor with no variables.
      * Assigns values to variables using Math.random() without user input
@@ -152,11 +177,16 @@ public class Weapon
      *
      * @return string that displays item information
      */
-    public String toString()
-    {
-        return  "Weapon Type: " + weaponType + "\n" + 
-               weaponName + "\nDamage: " + weaponDamage + "\nAccuracy: " + weaponAccuracy +
-               "\nFire Rate: " + weaponFireRate + "\nReload Speed: " + weaponReloadSpeed +
-               "\nMagazine: " + weaponMagSize + "\n";
+    public String toString() {
+        StringBuilder result = new StringBuilder("Weapon Type: " + weaponType + "\n" +
+                weaponName + "\nDamage: " + weaponDamage + "\nAccuracy: " + weaponAccuracy +
+                "\nFire Rate: " + weaponFireRate + "\nReload Speed: " + weaponReloadSpeed +
+                "\nMagazine: " + weaponMagSize + "\nAttachments:\n");
+    
+        for (Attachment attachment : attachments) {
+            result.append("  - ").append(attachment).append("\n");
+        }
+    
+        return result.toString();
     }
 }

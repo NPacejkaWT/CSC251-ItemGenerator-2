@@ -33,6 +33,7 @@ public class Sniper extends Weapon
         weaponReloadSpeed = assignInt(5,6);
         weaponMagSize = assignInt(4,10);
         weaponType = "Sniper";
+        generateAttachments();
     }
 
     /**

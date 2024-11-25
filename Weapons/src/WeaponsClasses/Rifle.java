@@ -33,6 +33,7 @@ public class Rifle extends Weapon
         weaponReloadSpeed = assignInt(3,7);
         weaponMagSize = assignInt(30,91);
         weaponType = "Rifle";
+        generateAttachments();
     }
 
     /**

@@ -32,6 +32,7 @@ public class SubMachine extends Weapon
         weaponReloadSpeed = assignInt(2,5);
         weaponMagSize = assignInt(6,21);
         weaponType = "Submachine Gun";
+        generateAttachments();
     }
 
     /**
