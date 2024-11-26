@@ -65,8 +65,16 @@ public class Shotgun extends Weapon
      */
     public String toString()
     {
-        return  weaponName + "\nDamage: " + weaponDamage + "x" + pellets + "\nAccuracy: " +
+        StringBuilder result = new StringBuilder("Weapon Type: " + weaponType + "\n" + weaponName + "\nDamage: " +
+                weaponDamage + "x" + pellets + "\nAccuracy: " +
                 weaponAccuracy + "\nFire Rate: " + weaponFireRate + "\nReload Speed: " +
-                weaponReloadSpeed + "\nMagazine: " + weaponMagSize + "\n";
+                weaponReloadSpeed + "\nMagazine: " + weaponMagSize + "\n");
+
+        for (Attachment attachment : attachments)
+        {
+            result.append("  - ").append(attachment).append("\n");
+        }
+
+        return result.toString();
     }
 }
