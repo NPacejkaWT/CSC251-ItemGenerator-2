@@ -7,6 +7,13 @@ public class SubMachine extends Weapon
      */
     private final String[] titles = {"SMG", "Anarchy", "Bruiser", "Thumper", "Stinger"};
     private final String[] prefixes = {"Double", "Relentless", "Ruthless", "Twisted"};
+     /**
+     *Constructor with arguments to be assigned by user
+     */
+    SubMachine(String name, int damage, double accuracy, double fireRate, double reloadSpeed, int clip)
+    {
+        super(name, damage, accuracy, fireRate, reloadSpeed,clip, "Submachine gun");
+    }
 
     /**
      * Default constructor with no arguments
@@ -24,6 +31,8 @@ public class SubMachine extends Weapon
         weaponFireRate = assignInt(5,10);
         weaponReloadSpeed = assignInt(2,5);
         weaponMagSize = assignInt(6,21);
+        weaponType = "Submachine Gun";
+        generateAttachments();
     }
 
     /**

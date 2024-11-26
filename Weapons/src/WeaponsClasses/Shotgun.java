@@ -18,7 +18,7 @@ public class Shotgun extends Weapon
      */
     public Shotgun(String name, int damage, double accuracy, double fireRate, double reloadSpeed, int clip, int pellets)
     {
-        super(name, damage, accuracy, fireRate, reloadSpeed, clip);
+        super(name, damage, accuracy, fireRate, reloadSpeed, clip, "Shotgun");
         this.pellets = pellets;
     }
 
@@ -38,6 +38,8 @@ public class Shotgun extends Weapon
         weaponFireRate = assignInt(5,10);
         weaponReloadSpeed = assignInt(2,5);
         weaponMagSize = assignInt(2,10);
+        weaponType = "Shotgun";
+        generateAttachments();
     }
 
     public int getPellets()

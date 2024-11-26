@@ -25,6 +25,10 @@ public class WeaponMain
         weaponArrayList.add(myShotgun);
         Sniper mySniper = new Sniper();
         weaponArrayList.add(mySniper);
+        SubMachine mySubMachine = new SubMachine();
+        weaponArrayList.add(mySubMachine);
+
+
 
         /**
          * for loop to display item information
